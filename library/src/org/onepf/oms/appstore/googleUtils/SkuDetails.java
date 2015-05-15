@@ -111,6 +111,6 @@ public class SkuDetails {
 
     @Override
     public String toString() {
-        return String.format("SkuDetails: type = %s, SKU = %s, title = %s, price = %s, description = %s", mItemType, mSku, mTitle, mPrice, mDescription);
+        return String.format("SkuDetails: type = %s, SKU = %s, title = %s, price = %s, description = %s, priceCurrencyCode = %s, priceMicroUnits = %s", mItemType, mSku, mTitle, mPrice, mDescription, mPriceCurrencyCode, mPriceMicroUnits);
     }
 }

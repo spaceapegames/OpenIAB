@@ -35,6 +35,8 @@ public class SkuDetails {
     String _price;
     String _title;
     String _description;
+    String _priceCurrencyCode;
+    String _priceMicroUnits;
 
     public SkuDetails(String itemType, String sku, String title, String price, String description) {
         _type = itemType;
@@ -42,6 +44,8 @@ public class SkuDetails {
         _title = title;
         _price = price;
         _description = description;
+        _priceCurrencyCode = "";
+        _priceMicroUnits = "";
     }
 
     public String toJson() {
@@ -52,6 +56,9 @@ public class SkuDetails {
             o.put("price", _price);
             o.put("title", _title);
             o.put("description", _description);
+            o.put("price_currency_code", _priceCurrencyCode);
+            o.put("price_amount_micros", _priceMicroUnits);
+            
         } catch (JSONException e) {
             Log.e(StoreApplication.TAG, "Couldn't serialize " + getClass().getSimpleName());
             return "";
@@ -70,7 +77,15 @@ public class SkuDetails {
     public String getPrice() {
         return _price;
     }
+    
+    public String getPriceCurrencyCode() {
+        return _priceCurrencyCode;
+    }
 
+    public String getPriceMicroUnits() {
+        return _priceMicroUnits;
+    }
+    
     public String getTitle() {
         return _title;
     }
@@ -81,6 +96,7 @@ public class SkuDetails {
 
     @Override
     public String toString() {
-        return String.format("SkuDetails: type = %s, SKU = %s, title = %s, price = %s, description = %s", _type, _sku, _title, _price, _description);
+        return String.format("SkuDetails: type = %s, SKU = %s, title = %s, price = %s, description = %s, priceCurrencyCode = %s, priceMicroUnits = %s", _type, _sku, _title, _price, _description, _priceCurrencyCode, _priceMicroUnits);
+
     }
 }
