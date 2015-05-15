@@ -42,6 +42,8 @@ public class SkuDetails {
         mSku = sku;
         mTitle = name;
         mPrice = price;
+        mPriceCurrencyCode = "";
+        mPriceMicroUnits = "";
     }
 
     public SkuDetails(String itemType, String sku, String name, String price, String description) {
@@ -50,6 +52,8 @@ public class SkuDetails {
         mTitle = name;
         mPrice = price;
         mDescription = description;
+        mPriceCurrencyCode = "";
+        mPriceMicroUnits = "";
     }
 
     public SkuDetails(String itemType, String jsonSkuDetails) throws JSONException {
