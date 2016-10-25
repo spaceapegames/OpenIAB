@@ -61,6 +61,7 @@ public class OpenAppstore extends DefaultAppstore {
         this.serviceConn = serviceConn;
         if (billingIntent != null) {
             this.mBillingService = new IabHelper(context, publicKey, this) {
+                /*
                 @Override
                 protected Intent getServiceIntent() {
                     return billingIntent;
@@ -76,6 +77,7 @@ public class OpenAppstore extends DefaultAppstore {
                     super.dispose();
                     OpenAppstore.this.context.unbindService(OpenAppstore.this.serviceConn);
                 }
+                 */
 
             };
         }
